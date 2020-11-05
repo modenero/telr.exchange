@@ -24,13 +24,17 @@
                     <p class="text-danger">IMPORTANT — PLEASE READ</p>
 
                     <p>
-                        The only official URL for TelrExchange is:
+                        The only official URLs for Telr Exchange are:
                         <br />&nbsp;&nbsp;&nbsp;&nbsp; <strong class="text-primary">https://telr.exchange</strong>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp; <strong class="text-primary">https://ipfs.telr.exchange</strong>
                         <br />Bookmark it once and use the bookmark.
                     </p>
 
                     <p>
                         Do not send your tokens directly to the smart contract, or they will be lost and unrecoverable.
+                    </p>
+
+                    <p>
                         Use the Deposit form (upper-left) to send the proper deposit transaction.
                     </p>
 
@@ -41,7 +45,7 @@
                     <p class="text-danger">Disclaimer</p>
 
                     <p>
-                        TelrExchange is a decentralized trading platform that lets you trade multiple cryptocurrencies.
+                        Telr Exchange is a decentralized trading platform that lets you trade multiple cryptocurrencies.
                     </p>
 
                     <p>
@@ -53,23 +57,23 @@
                     </p>
 
                     <p>
-                        TelrExchange is not responsible for your decisions, actions, or losses that result from using TelrExchange.
+                        Telr Exchange is not responsible for your decisions, actions, or losses that result from using Telr Exchange.
                     </p>
 
                     <p>
-                        TelrExchange makes no guarantee about the tokens that you trade using TelrExchange.
+                        Telr Exchange makes no guarantee about the tokens that you trade using Telr Exchange.
                     </p>
 
                     <p>
-                        TelrExchange does not hold your funds and does not offer refunds.
+                        Telr Exchange does not hold your funds and does not offer refunds.
                     </p>
 
                     <p>
-                        While the information contained on TelrExchange is periodically updated, no guarantee is given that the information provided on TelrExchange is correct, complete, or up-to-date.
+                        While the information contained on Telr Exchange is periodically updated, no guarantee is given that the information provided on Telr Exchange is correct, complete, or up-to-date.
                     </p>
 
                     <p>
-                        By using TelrExchange, you acknowledge this and agree to these terms.
+                        By using Telr Exchange, you acknowledge this and agree to these terms.
                     </p>
                 </div>
             </div>

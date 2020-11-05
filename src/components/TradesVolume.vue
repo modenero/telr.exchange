@@ -105,7 +105,7 @@
                             </tr>
                             <tr>
                                 <td colspan="4" class="table-note">
-                                    Note: TelrExchange will only show recent transactions.
+                                    Note: Telr Exchange will only show recent transactions.
                                 </td>
                             </tr>
                         </tbody>

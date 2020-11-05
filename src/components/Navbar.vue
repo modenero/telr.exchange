@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-light bg-light navbar-expand-lg">
         <a class="navbar-brand text-primary" href="/">
-            Telr<span class="text-info">Exchange</span>
+            Telr <span class="text-info">Exchange</span>
         </a>
 
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
@@ -271,7 +271,7 @@
 
                     <div class="modal-body">
                         <p class="text-secondary">
-                            TelrExchange is <strong>NOT</strong> currently optimized for phones and tablets.
+                            Telr Exchange is <strong>NOT</strong> currently optimized for phones and tablets.
                             Our team is working hard to make this availalbe soonish'.
                         </p>
 

@@ -1,7 +1,7 @@
 <template>
     <div class="component">
         <div class="component-header">
-            <span class="text-primary">Telr</span><span class="text-warning">Exchange</span> Balance
+            <span class="text-primary">Telr</span> <span class="text-warning">Exchange</span> Balance
         </div>
 
         <div id="balance">
@@ -73,8 +73,8 @@
                             <thead>
                                 <tr>
                                     <th>Token</th>
-                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance in your personal Ethereum wallet, which you have connected to TelrExchange in the account dropdown (upper right).">Cached OUT</th>
-                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance you have deposited from your personal Ethereum wallet to the TelrExchange smart contract.">Deposit</th>
+                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance in your personal Ethereum wallet, which you have connected to Telr Exchange in the account dropdown (upper right).">Cached OUT</th>
+                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance you have deposited from your personal Ethereum wallet to the Telr Exchange smart contract.">Deposit</th>
                                 </tr>
                             </thead>
 
@@ -99,7 +99,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-info btn-sm balance-inline" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Use this to withdraw from the TelrExchange smart contract (&quot;TelrExchange&quot; column) to your personal Ethereum wallet (&quot;Wallet&quot; column).">Withdraw</button>
+                                        <button type="button" class="btn btn-info btn-sm balance-inline" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Use this to withdraw from the Telr Exchange smart contract (&quot;Telr Exchange&quot; column) to your personal Ethereum wallet (&quot;Wallet&quot; column).">Withdraw</button>
                                     </td>
                                 </tr>
 
@@ -123,7 +123,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-info btn-sm balance-inline" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Use this to withdraw from the TelrExchange smart contract (&quot;TelrExchange&quot; column) to your personal Ethereum wallet (&quot;Wallet&quot; column).">
+                                        <button type="button" class="btn btn-info btn-sm balance-inline" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Use this to withdraw from the Telr Exchange smart contract (&quot;Telr Exchange&quot; column) to your personal Ethereum wallet (&quot;Wallet&quot; column).">
                                             Withdraw
                                         </button>
                                     </td>
@@ -137,10 +137,10 @@
                             <thead>
                                 <tr>
                                     <th>Token</th>
-                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance in your personal Ethereum wallet, which you have connected to TelrExchange in the account dropdown (upper right).">
+                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance in your personal Ethereum wallet, which you have connected to Telr Exchange in the account dropdown (upper right).">
                                         Wallet
                                     </th>
-                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance you have deposited from your personal Ethereum wallet to the TelrExchange smart contract.">TelrExchange</th>
+                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance you have deposited from your personal Ethereum wallet to the Telr Exchange smart contract.">Telr Exchange</th>
                                 </tr>
                             </thead>
 

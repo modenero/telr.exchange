@@ -60,7 +60,7 @@ export default {
     data: () => {
         return {
             /* App Summary */
-            appTitle: 'TelrExchange',
+            appTitle: 'Telr Exchange',
             appDesc: 'The Official Bitcoin (DEX) Decentralized Exchange',
 
             /* Blockchain Summary */

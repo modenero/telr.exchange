@@ -7,8 +7,15 @@
      border-radius:.2rem
 }
 
+/* TODO: Add support for mobile (phones and tablets). */
 .navbar {
     max-height: 48px;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        max-height: 40px;
+    }
 }
 
 .navbar-brand {
