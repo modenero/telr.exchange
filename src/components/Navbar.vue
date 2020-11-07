@@ -293,7 +293,6 @@ export default {
 
     },
     created: function () {
-        console.log('STORE', this.$store);
         console.log('PROFILE ADDRESS', this.getProfileAddress)
     },
     mounted: function () {

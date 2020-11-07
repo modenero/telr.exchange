@@ -42,7 +42,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a href="javascript://" class="nowrap">BAI<span class="d-md-none"> (BAI)</span></a>
+                                        <a href="javascript://" class="nowrap">{{tokenName}}<span class="d-md-none"> ({{tokenSymbol}})</span></a>
                                     </td>
                                     <td>
                                         <span>0.013</span>
@@ -242,13 +242,34 @@ export default {
     },
     data: () => {
         return {
-            //
+            token: null,
         }
     },
     computed: {
         ...mapGetters([
             //
         ]),
+
+        ...mapGetters('tokens', [
+            'getToken'
+        ]),
+
+        tokenName() {
+            if (!this.token) {
+                return null
+            }
+
+            return this.token.title
+        },
+
+        tokenSymbol() {
+            if (!this.token) {
+                return null
+            }
+
+            return this.token.symbol
+        },
+
     },
     methods: {
         ...mapActions([
@@ -262,8 +283,10 @@ export default {
         },
 
     },
-    created: function () {
-        //
+    created: async function () {
+        /* Retrieve current token. */
+        this.token = await this.getToken('0x505A442B3E3E9AEDF06D54572a295F8D64f8F582')
+        console.log('CURRENT TOKEN', this.token)
     },
     mounted: function () {
         //

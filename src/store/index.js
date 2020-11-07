@@ -6,15 +6,16 @@ import createPersistedState from 'vuex-persistedstate'
 
 /* Import (local) modules. */
 import system from './modules/system'
+import tokens from './modules/tokens'
 
 Vue.use(Vuex)
 
 /* Set modules. */
 const modules = {
-    // campaigns,
     // profile,
     // storage,
     system,
+    tokens,
     // utils,
     // wallet,
 }
