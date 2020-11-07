@@ -27,7 +27,7 @@
 
                 <li class="nav-item dropdown" id="tokensDropdown">
                     <a href="javascript://" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        Bai Stablecoin (BAI)&nbsp;
+                        {{tokenName}} ({{tokenSymbol}})&nbsp;
                     </a>
 
                     <ul class="dropdown-menu">
@@ -52,6 +52,14 @@
                             Dai Stablecoin <small><small class="text-muted">[ <span class="text-primary">DAI</span> ]</small></small>
                         </li>
 
+                        <li class="dropdown-item btn text-primary">
+                            Tether Stablecoin <small><small class="text-muted">[ <span class="text-primary">USDt</span> ]</small></small>
+                        </li>
+
+                        <li class="dropdown-item btn text-primary">
+                            USDC Stablecoin <small><small class="text-muted">[ <span class="text-primary">USDC</span> ]</small></small>
+                        </li>
+
                         <!-- separator -->
                         <li role="separator" class="dropdown-divider"></li>
 
@@ -60,7 +68,7 @@
                         </li>
 
                         <li class="dropdown-item btn text-primary">
-                            Bitcoin Cash <small><small class="text-muted">[ <span class="text-primary">BCH</span> ]</small></small>
+                            Bitcoin <small><small class="text-muted">[ <span class="text-primary">BCH</span> ]</small></small>
                         </li>
 
                         <li class="dropdown-item btn text-primary">
@@ -270,13 +278,34 @@ export default {
     },
     data: () => {
         return {
-
+            token: null,
         }
     },
     computed: {
         ...mapGetters([
             'getProfileAddress',
         ]),
+
+        ...mapGetters('tokens', [
+            'getToken'
+        ]),
+
+        tokenName() {
+            if (!this.token) {
+                return null
+            }
+
+            return this.token.title
+        },
+
+        tokenSymbol() {
+            if (!this.token) {
+                return null
+            }
+
+            return this.token.symbol
+        },
+
     },
     methods: {
         ...mapActions([
@@ -292,8 +321,13 @@ export default {
         },
 
     },
-    created: function () {
+    created: async function () {
         console.log('PROFILE ADDRESS', this.getProfileAddress)
+
+        /* Retrieve current token. */
+        this.token = await this.getToken('0x505A442B3E3E9AEDF06D54572a295F8D64f8F582')
+        console.log('CURRENT TOKEN', this.token)
+
     },
     mounted: function () {
 

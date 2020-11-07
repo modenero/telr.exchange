@@ -20,21 +20,12 @@
                 <Notices />
             </div>
         </div>
-
-        <!-- <div id="buyTrade"><div></div></div> -->
-        <!-- <div id="sellTrade"><div></div></div> -->
-        <!-- <div id="importAccount"></div> -->
-        <!-- <div id="otherToken"></div> -->
-        <!-- <div id="gasPrice"></div> -->
-        <!-- <div id="tokenGuide"></div> -->
-        <!-- <div id="screencast"></div> -->
-        <!-- <div id="ledger"></div> -->
     </main>
 </template>
 
 <script>
 /* Initialize vuex. */
-import { mapActions, mapGetters, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 /* Import components. */
 import Balance from '@/components/Balance.vue'
@@ -59,52 +50,26 @@ export default {
     },
     data: () => {
         return {
-            /* App Summary */
-            appTitle: 'Telr Exchange',
-            appDesc: 'The Official Bitcoin (DEX) Decentralized Exchange',
-
-            /* Blockchain Summary */
-            // anameTelr: '0x0',
-            // anameTelr: '0x0',
-
-            /* Exchange summary. */
-            orders: 'There are no orders here.'
-
+            //
         }
     },
     computed: {
-        ...mapState({
-            // val: state => state.val,
-        }),
-
         ...mapGetters({
             //
         }),
+
     },
     methods: {
         ...mapActions({
             //
         }),
 
-        init () {
-            console.info('App has loaded successfully!') // eslint-disable-line no-console
-
-            /* Initialize Ethereum provider. */
-            // initEthereum()
-
-            /* Initialize order book. */
-            // initOrderBook()
-
-            /* Initialie Telr contract. */
-            // initTelr()
-
-            /* Initialie Telr contract. */
-            // initTelr()
-        },
+    },
+    created: function () {
+        //
     },
     mounted: function () {
-        /* Initialize application. */
-        // this.init()
+        //
     },
 }
 </script>

@@ -31,7 +31,7 @@
 
                         <tbody>
                             <tr>
-                                <td>12:44:52 AM 1/21</td>
+                                <td>12:44:52 AM {{today}}</td>
                                 <td>
                                     <span cdata-toggle="tooltip" data-placement="bottom" title="10.000000000">10.000</span>
                                 </td>
@@ -45,7 +45,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    12:42:00 AM 1/21
+                                    12:42:00 AM {{today}}
                                 </td>
                                 <td>
                                     <span cdata-toggle="tooltip" data-placement="bottom" title="9.999999990">10.000</span>
@@ -60,7 +60,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    7:09:16 PM 1/19
+                                    7:09:16 PM {{yesterday}}
                                 </td>
                                 <td>
                                     <span cdata-toggle="tooltip" data-placement="bottom" title="10.000000000">10.000</span>
@@ -75,7 +75,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    7:00:44 PM 1/19
+                                    7:00:44 PM {{yesterday}}
                                 </td>
                                 <td>
                                     <span cdata-toggle="tooltip" data-placement="bottom" title="10.000000000">10.000</span>
@@ -90,7 +90,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    6:13:12 PM 1/18
+                                    6:13:12 PM {{yesterday}}
                                 </td>
                                 <td>
                                     <span cdata-toggle="tooltip" data-placement="bottom" title="25.000000000">25.000</span>
@@ -161,10 +161,51 @@
 </template>
 
 <script>
+/* Initialize vuex. */
+import { mapActions, mapGetters } from 'vuex'
+
+/* Import modules. */
+import moment from 'moment'
+
 export default {
     props: {
         // msg: String
-    }
+    },
+    data: () => {
+        return {
+            //
+        }
+    },
+    computed: {
+        ...mapGetters([
+            //
+        ]),
+
+        ...mapGetters('tokens', [
+            // 'getToken'
+        ]),
+
+        today() {
+            return moment().format('M/d')
+        },
+
+        yesterday() {
+            return moment().subtract(1, 'days').format('M/d')
+        },
+
+    },
+    methods: {
+        ...mapActions([
+            // 'createEthOrder'
+        ]),
+
+    },
+    created: async function () {
+        //
+    },
+    mounted: function () {
+        //
+    },
 }
 </script>
 

@@ -29,13 +29,15 @@
 
             <div>
                 <div class="tab-content">
+
+                    <!-- DEPOSIT -->
                     <div role="tabpanel" class="tab-pane fade show active" id="deposit">
                         <table class="table table-borderless table-balances">
                             <thead>
                                 <tr>
-                                    <th style="width:50%">Token Name</th>
-                                    <th style="width:25%">OUT</th>
-                                    <th style="width:25%">IN</th>
+                                    <th style="width:50%">Token name</th>
+                                    <th style="width:25%">Wallet</th>
+                                    <th style="width:25%">Exchange</th>
                                 </tr>
                             </thead>
 
@@ -52,7 +54,8 @@
                                     </td>
                                 </tr>
 
-                                <tr class="balance-form">
+                                <!-- <tr class="balance-form"> -->
+                                <tr class="">
                                     <td>
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-sm" id="cacheInBaseToken" placeholder="Amount">
@@ -68,20 +71,21 @@
                         </table>
                     </div>
 
+                    <!-- WITHDRAW -->
                     <div role="tabpanel" class="tab-pane fade" id="withdraw">
                         <table class="table table-borderless table-balances">
                             <thead>
                                 <tr>
-                                    <th>Token</th>
-                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance in your personal Ethereum wallet, which you have connected to Telr Exchange in the account dropdown (upper right).">Cached OUT</th>
-                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance you have deposited from your personal Ethereum wallet to the Telr Exchange smart contract.">Deposit</th>
+                                    <th style="width:50%">Token name</th>
+                                    <th style="width:25%" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance in your personal Ethereum wallet, which you have connected to Telr Exchange in the account dropdown (upper right).">Wallet</th>
+                                    <th style="width:25%" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance you have deposited from your personal Ethereum wallet to the Telr Exchange smart contract.">Exchange</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a href="javascript://" class="nowrap">BAI</a>
+                                        <a href="javascript://" class="nowrap">{{tokenName}}<span class="d-md-none"> ({{tokenSymbol}})</span></a>
                                     </td>
                                     <td>
                                         <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="0.000000000000">0.000</span>
@@ -91,39 +95,15 @@
                                     </td>
                                 </tr>
 
-                                <tr class="balance-form">
-                                    <td colspan="2">
+                                <!-- <tr class="balance-form"> -->
+                                <tr class="">
+                                    <td>
                                         <div class="form-group">
-                                            <label for="BAIwithdrawl">Withdraw BAI</label>
-                                            <input type="text" class="form-control form-control-sm" id="BAIwithdrawl" placeholder="Amount">
+                                            <input type="text" class="form-control form-control-sm" id="cacheInBaseToken" placeholder="Amount">
                                         </div>
                                     </td>
-                                    <td>
-                                        <button type="button" class="btn btn-info btn-sm balance-inline" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Use this to withdraw from the Telr Exchange smart contract (&quot;Telr Exchange&quot; column) to your personal Ethereum wallet (&quot;Wallet&quot; column).">Withdraw</button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="javascript://" class="nowrap">Bai Stablecoin</a>
-                                    </td>
-                                    <td>
-                                        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="0.013068495718">0.013</span>
-                                    </td>
-                                    <td>
-                                        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="0.000000000000">0.000</span>
-                                    </td>
-                                </tr>
-
-                                <tr class="balance-form">
                                     <td colspan="2">
-                                        <div class="form-group">
-                                            <label for="ETHwithdrawl">Withdraw BCH</label>
-                                            <input type="text" class="form-control form-control-sm" id="ETHwithdrawl" placeholder="Amount">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-info btn-sm balance-inline" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Use this to withdraw from the Telr Exchange smart contract (&quot;Telr Exchange&quot; column) to your personal Ethereum wallet (&quot;Wallet&quot; column).">
+                                        <button type="button" class="btn btn-info btn-sm btn-block" @click="withdraw">
                                             Withdraw
                                         </button>
                                     </td>
@@ -132,22 +112,21 @@
                         </table>
                     </div>
 
+                    <!-- TRANSFER -->
                     <div role="tabpanel" class="tab-pane fade" id="transfer">
                         <table class="table table-borderless table-balances">
                             <thead>
                                 <tr>
-                                    <th>Token</th>
-                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance in your personal Ethereum wallet, which you have connected to Telr Exchange in the account dropdown (upper right).">
-                                        Wallet
-                                    </th>
-                                    <th data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance you have deposited from your personal Ethereum wallet to the Telr Exchange smart contract.">Telr Exchange</th>
+                                    <th style="width:50%">Token name</th>
+                                    <th style="width:25%" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance in your personal Ethereum wallet, which you have connected to Telr Exchange in the account dropdown (upper right).">Wallet</th>
+                                    <th style="width:25%" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="This is the balance you have deposited from your personal Ethereum wallet to the Telr Exchange smart contract.">Exchange</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a href="javascript://" class="nowrap">BAI</a>
+                                        <a href="javascript://" class="nowrap">{{tokenName}}<span class="d-md-none"> ({{tokenSymbol}})</span></a>
                                     </td>
                                     <td>
                                         <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="0.000000000000">0.000</span>
@@ -159,74 +138,27 @@
 
                                 <tr>
                                     <td colspan="3">
-                                        <div class="balance-inline-form">
-                                            <div class="form-group">
-                                                <label for="BAItransfer1">Amount</label>
-                                                <input type="text" class="form-control form-control-sm" id="BAItransfer1">
+                                        <div class="form-row balance-inline-form">
+                                            <div class="col-sm-4 form-group">
+                                                <input type="text" class="form-control form-control-sm" id="validationDefault01" value="" placeholder="Amount">
                                             </div>
-                                            <span>to</span>
-                                            <div class="form-group">
-                                                <label for="BAItransfer2">Address</label>
-                                                <input type="text" class="form-control form-control-sm" id="BAItransfer2" value="">
+
+                                            <div class="col-sm-5 form-group">
+                                                <input type="text" class="form-control form-control-sm" id="validationDefault02" value="" placeholder="Recipient address">
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <button class="btn btn-info btn-sm btn-block">Transfer</button>
                                             </div>
                                         </div>
-                                    </td>
-                                </tr>
-
-                                <tr class="balance-form">
-                                    <td colspan="3">
-                                        <button type="button" class="btn btn-info btn-sm balance-below" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Use this to transfer from your personal Ethereum wallet (&quot;Wallet&quot; column) to any other wallet.">
-                                            Transfer
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="javascript://" class="nowrap">BAI Stablecoin</a>
-                                    </td>
-                                    <td>
-                                        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="0.013068495718">0.013</span>
-                                    </td>
-                                    <td>
-                                        <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="0.000000000000">0.000</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td colspan="3">
-                                        <div class="balance-inline-form">
-                                            <div class="form-group">
-                                                <label for="ETHtransfer1">Amount</label>
-                                                <input type="text" class="form-control form-control-sm" id="ETHtransfer1">
-                                            </div>
-                                            <span>to</span>
-                                            <div class="form-group">
-                                                <label for="ETHtransfer2">Address</label>
-                                                <input type="text" class="form-control form-control-sm" id="ETHtransfer2" value="">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr class="balance-form">
-                                    <td colspan="3">
-                                        <button type="button" class="btn btn-info btn-sm balance-below" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Use this to transfer from your personal Ethereum wallet (&quot;Wallet&quot; column) to any other wallet.">
-                                            Transfer
-                                        </button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
+
                     </div>
                 </div>
 
-                <!-- <div class="balance-warning">
-                    <p class="text-danger text-center"><small>
-                        Make sure <a href="javascript://">BAI</a> is the token you actually want to trade.
-                        Multiple tokens can share the same name.
-                    </small></p>
-                </div> -->
             </div>
         </div>
     </div>
@@ -280,6 +212,11 @@ export default {
             console.log('Ready to deposit')
 
             this.createEthOrder()
+        },
+
+        withdraw() {
+            console.log('Ready to withdraw')
+
         },
 
     },

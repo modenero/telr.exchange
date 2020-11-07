@@ -9,11 +9,15 @@
                 </li>
 
                 <li role="presentation" class="nav-item">
-                    <a href="javascript://" aria-controls="twitter" role="tab" data-toggle="tab" class="nav-link" data-original-title="" title="">Reddit</a>
+                    <a href="javascript://" aria-controls="twitter" role="tab" data-toggle="tab" class="nav-link" data-original-title="" title="">Privacy</a>
                 </li>
 
                 <li role="presentation" class="nav-item">
-                    <a href="javascript://" aria-controls="twitter" role="tab" data-toggle="tab" class="nav-link" data-original-title="" title="">Read.cash</a>
+                    <a href="javascript://" aria-controls="twitter" role="tab" data-toggle="tab" class="nav-link" data-original-title="" title="">Legal</a>
+                </li>
+
+                <li role="presentation" class="nav-item">
+                    <a href="javascript://" aria-controls="twitter" role="tab" data-toggle="tab" class="nav-link" data-original-title="" title="">CoC</a>
                 </li>
             </ul>
         </div>
