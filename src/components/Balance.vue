@@ -59,7 +59,7 @@
                                         </div>
                                     </td>
                                     <td colspan="2">
-                                        <button type="button" class="btn btn-info btn-sm btn-block">
+                                        <button type="button" class="btn btn-info btn-sm btn-block" @click="deposit">
                                             Deposit
                                         </button>
                                     </td>
@@ -233,10 +233,41 @@
 </template>
 
 <script>
+/* Initialize vuex. */
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
     props: {
         // msg: String
-    }
+    },
+    data: () => {
+        return {
+            //
+        }
+    },
+    computed: {
+        ...mapGetters([
+            //
+        ]),
+    },
+    methods: {
+        ...mapActions([
+            'createEthOrder'
+        ]),
+
+        deposit() {
+            console.log('Ready to deposit')
+
+            this.createEthOrder()
+        },
+
+    },
+    created: function () {
+        //
+    },
+    mounted: function () {
+        //
+    },
 }
 </script>
 

@@ -10,7 +10,7 @@
   "dependencies": {
     "cashid": "0.3.3",
     "core-js": "3.6.4",
-    "ethers": "4.0.45",
+    "ethers": "5.0.19",
     "moment": "2.24.0",
     "nitojs": "gitlab:bchplease/nitojs",
     "numeral": "2.0.6",

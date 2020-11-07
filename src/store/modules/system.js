@@ -1,5 +1,5 @@
 /* Import modules (getters). */
-// import getOutbox from './system/getters/getOutbox'
+import getProfileAddress from './system/getters/getProfileAddress'
 
 /* Import modules (actions). */
 import createEthOrder from './system/actions/createEthOrder'
@@ -70,14 +70,11 @@ const state = {
      * v1: Alpha (Preview) Edition
      */
     schemaVersion: 1,
-
-
-    profileAddress: 'Satoshi#100',
 }
 
 /* Getters. */
 const getters = {
-    // getOutbox,
+    getProfileAddress,
 }
 
 /* Actions. */

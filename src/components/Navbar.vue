@@ -4,8 +4,8 @@
             Telr <span class="text-info">Exchange</span>
         </a>
 
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
-        <button class="navbar-toggler" type="button" data-toggle="modal" data-target="#mobileModal" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <button class="navbar-toggler" type="button" data-toggle="modal" data-target="#mobileModal" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -95,7 +95,7 @@
                             <a href="javascript://">
                                 <span class="badge badge-success">Badger</span>
 
-                                <strong class="text-info">&nbsp; &nbsp; {{profileAddress}}</strong>
+                                <strong class="text-info">&nbsp; &nbsp; {{getProfileAddress}}</strong>
 
                                 <span class="text-muted">&nbsp; &middot; &middot; &nbsp;</span>
 
@@ -257,60 +257,31 @@
             </div>
         </div>
 
-        <!-- Mobile Modal -->
-        <div class="modal fade" id="mobileModal" tabindex="-1" role="dialog" aria-labelledby="mobileModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-info" id="mobileModalLabel">Mobile Support</h5>
-
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        <p class="text-secondary">
-                            Telr Exchange is <strong>NOT</strong> currently optimized for phones and tablets.
-                            Our team is working hard to make this availalbe soonish'.
-                        </p>
-
-                        <p class="text-secondary">
-                            We currently recommend that you use a desktop browser like <strong>Brave or Chrome,</strong> with the <strong>Badger or MetaMask</strong> plugin.
-                        </p>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Okay</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </nav>
 </template>
 
 <script>
 /* Initialize vuex. */
-import { mapActions, mapGetters, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
     props: {
         // msg: String
     },
-    computed: {
-        ...mapState({
-            profileAddress: state => state.profileAddress,
-        }),
+    data: () => {
+        return {
 
-        ...mapGetters({
-            //
-        }),
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'getProfileAddress',
+        ]),
     },
     methods: {
-        ...mapActions({
+        ...mapActions([
             //
-        }),
+        ]),
 
         connectBadger() {
             console.log('TODO: connect Badger')
@@ -322,14 +293,30 @@ export default {
 
     },
     created: function () {
-        //
+        console.log('STORE', this.$store);
+        console.log('PROFILE ADDRESS', this.getProfileAddress)
     },
     mounted: function () {
-        //
+
     },
 }
 </script>
 
 <style scoped>
-/*  */
+@media (max-width:768px) {
+    nav {
+        background-color: rgba(255, 255, 255, 1.0) !important;
+        z-index: 1000;
+        /* height: 100px !important; */
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 48px;
+        left: 0;
+        padding: 5px;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, 1.0);
+    }
+}
 </style>
