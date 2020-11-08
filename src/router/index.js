@@ -11,9 +11,9 @@ const routes = [
         component: Home
     },
     // {
-    //     path: '/welcome',
-    //     name: 'Welcome',
-    //     component: Welcome
+    //     path: '/simple',
+    //     name: 'Simple',
+    //     component: Simple
     // },
 ]
 

@@ -1,11 +1,11 @@
 /* Import modules (getters). */
-import getToken from './tokens/getters/getToken'
+// import getShuffledArray from './utils/getters/getShuffledArray'
 
 /* Import modules (actions). */
-import deposit from './tokens/actions/deposit'
+import toast from './utils/actions/toast'
 
 /* Import modules (mutations). */
-// import setOutbox from './tokens/mutations/setOutbox'
+// ...
 
 /* Initialize state. */
 const state = {
@@ -14,17 +14,17 @@ const state = {
 
 /* Getters. */
 const getters = {
-    getToken,
+    // getShuffledArray,
 }
 
 /* Actions. */
 const actions = {
-    deposit,
+    toast,
 }
 
 /* Mutations. */
 const mutations = {
-    // setOutbox,
+    //
 }
 
 /* Export. */

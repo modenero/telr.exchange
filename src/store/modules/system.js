@@ -1,5 +1,6 @@
 /* Import modules (getters). */
-import getAbi from './system/getters/getAbi'
+import getAbiExchange from './system/getters/getAbiExchange'
+import getAbiToken from './system/getters/getAbiToken'
 import getProfileAddress from './system/getters/getProfileAddress'
 
 /* Import modules (actions). */
@@ -75,7 +76,8 @@ const state = {
 
 /* Getters. */
 const getters = {
-    getAbi,
+    getAbiExchange,
+    getAbiToken,
     getProfileAddress,
 }
 

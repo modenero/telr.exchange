@@ -7,6 +7,7 @@ import createPersistedState from 'vuex-persistedstate'
 /* Import (local) modules. */
 import system from './modules/system'
 import tokens from './modules/tokens'
+import utils from './modules/utils'
 
 Vue.use(Vuex)
 
@@ -16,7 +17,7 @@ const modules = {
     // storage,
     system,
     tokens,
-    // utils,
+    utils,
     // wallet,
 }
 

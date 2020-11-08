@@ -46,23 +46,24 @@
                                     <td>
                                         <a href="javascript://" class="nowrap">{{tokenName}}<span class="d-md-none"> ({{tokenSymbol}})</span></a>
                                     </td>
+
                                     <td>
                                         <span>0.013</span>
                                     </td>
+
                                     <td>
                                         <span>0.000</span>
                                     </td>
                                 </tr>
 
-                                <!-- <tr class="balance-form"> -->
                                 <tr class="">
                                     <td>
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-sm" id="cacheInBaseToken" placeholder="Amount">
+                                            <input type="text" class="form-control form-control-sm" id="cacheInBaseToken" placeholder="Amount" v-model="depositAmount">
                                         </div>
                                     </td>
                                     <td colspan="2">
-                                        <button type="button" class="btn btn-info btn-sm btn-block" @click="deposit">
+                                        <button type="button" class="btn btn-info btn-sm btn-block" @click="depositTokens">
                                             Deposit
                                         </button>
                                     </td>
@@ -168,6 +169,8 @@
 /* Initialize vuex. */
 import { mapActions, mapGetters } from 'vuex'
 
+import Swal from 'sweetalert2'
+
 export default {
     props: {
         // msg: String
@@ -175,6 +178,7 @@ export default {
     data: () => {
         return {
             token: null,
+            depositAmount: null,
         }
     },
     computed: {
@@ -205,13 +209,38 @@ export default {
     },
     methods: {
         ...mapActions([
-            'createEthOrder'
+            // 'deposit'
         ]),
 
-        deposit() {
-            console.log('Ready to deposit')
+        ...mapActions('tokens', [
+            'deposit'
+        ]),
 
-            this.createEthOrder()
+        ...mapActions('utils', [
+            'toast',
+        ]),
+
+        depositTokens() {
+            if (typeof this.depositAmount === 'undefined' || this.depositAmount === 0 || this.depositAmount === null) {
+                // this.toast(['Error!', 'Please enter a token amount', 'danger'])
+
+                return Swal.fire({
+                    title: 'Deposit Error!',
+                    text: `Please enter the amount of tokens you want to deposit.`,
+                    icon: 'error',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Okay'
+                })
+            }
+
+            /* Build deposit package. */
+            const pkg = {
+                address: '0x505A442B3E3E9AEDF06D54572a295F8D64f8F582',
+                amount: this.depositAmount,
+            }
+
+            /* Deposit tokens. */
+            this.deposit(pkg) // KBBQ Token (Ropsten)
         },
 
         withdraw() {

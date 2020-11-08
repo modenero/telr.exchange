@@ -1,7 +1,7 @@
 /**
-* Get ABI
+* Get ABI (Telr) Exchange
 */
-const getAbi = () => {
+const getAbiExchange = () => {
     return [
 	{
 		"constant": false,
@@ -796,4 +796,4 @@ const getAbi = () => {
 }
 
 /* Export module. */
-export default getAbi
+export default getAbiExchange

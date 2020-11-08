@@ -11,20 +11,18 @@ const createEthOrder = async ({ getters }) => {
     console.log('Creating new order...')
 
     /* Set Ethereum provider. */
-    // const provider = new ethers.providers.JsonRpcProvider('https://cloudflare-eth.com')
-    // const provider = new ethers.providers.AlchemyProvider('kovan')
     // const provider = new ethers.providers.EtherscanProvider('homestead', '')
     // const provider = new ethers.providers.InfuraProvider('kovan', 'f43ab3538291466b87cc8cab45bc3c61')
     const provider = new ethers.providers.InfuraProvider('ropsten', 'f43ab3538291466b87cc8cab45bc3c61')
-    console.log('PROVIDER', provider)
+    // console.log('PROVIDER', provider)
 
     /* Set contract address. */
     // const contractAddress = '0xda1fF69a39937bc2DcC072e4767FdB36D821e08f' // kovan
     const contractAddress = '0xeF54AE01D55ADeCac852cBe3e6F16b0D1bf38dE0' // ropsten
     console.log('CONTRACT ADDRESS', contractAddress)
 
-    /* Set contract ABI. */
-    const abi = getters.getAbi
+    /* Set contract ABI (Telr) Exchange. */
+    const abi = getters.getAbiExchange
 
     /* Initialize contract connection via Web3 Provider. */
     const contract = new ethers.Contract(contractAddress, abi, provider)

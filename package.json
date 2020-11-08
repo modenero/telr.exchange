@@ -14,6 +14,7 @@
     "moment": "2.24.0",
     "nitojs": "gitlab:bchplease/nitojs",
     "numeral": "2.0.6",
+    "sweetalert2": "10.9.0",
     "vue": "2.6.11",
     "vue-router": "3.1.5",
     "vuex": "3.1.2",
